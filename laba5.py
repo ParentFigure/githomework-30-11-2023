@@ -99,3 +99,30 @@ class Polynom:
         self.points.sort(key=get_y)
     def __del__(self):
         print("Polynom has been deleted")
+
+        
+if __name__ == "__main__":
+    point1 = Point(0, 0)
+    point2 = Point(3, 0)
+    point3 = Point(1, 2)
+    point4 = Point(2, 1)
+
+    polynom = Polynom(Color.RED, point1, point2, point3, point4)
+
+    print("Original Polynom:")
+    print(polynom)
+
+    print(f"Perimeter: {polynom.perimeter()}")
+    print(f"Longest Diagonal: {polynom.longest_diagonal()}")
+
+    polynom.sort_by_x()
+    print("\nSorted by X:")
+    print(polynom)
+    polynom.sort_by_y()
+    print("\nSorted by Y:")
+    print(polynom)
+
+    polynom1 = Polynom(Color.GREEN, point1, point2, point3)
+    print(f"\n\npolynom1: {polynom1}")
+    print(f"Perimeter polynom1: {polynom1.perimeter()}")
+    print(f"Longest Diagonal polynom1: {polynom1.longest_diagonal()}")
