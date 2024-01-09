@@ -62,18 +62,17 @@ class Polynom:
         """Count perimeter"""
         if len(self.points) < 2:
             return 0
-
-        p = 0
+        perimeter = 0
         for i in range(len(self.points) - 1):
-            p += math.dist((self.points[i].x,
+            perimeter += math.dist((self.points[i].x,
                             self.points[i].y),
                            (self.points[i + 1].x,
                             self.points[i + 1].y))
-        p += math.dist((self.points[-1].x,
+        perimeter += math.dist((self.points[-1].x,
                          self.points[-1].y),
                        (self.points[0].x,
                          self.points[0].y))
-        return p
+        return perimeter
     def longest_diagonal(self):
         """Define longest diagonal"""
         if len(self.points) < 4:
@@ -101,7 +100,7 @@ class Polynom:
         print("Polynom has been deleted")
 
         
-if __name__ == "__main__":
+def main():
     point1 = Point(0, 0)
     point2 = Point(3, 0)
     point3 = Point(1, 2)
@@ -126,3 +125,6 @@ if __name__ == "__main__":
     print(f"\n\npolynom1: {polynom1}")
     print(f"Perimeter polynom1: {polynom1.perimeter()}")
     print(f"Longest Diagonal polynom1: {polynom1.longest_diagonal()}")
+
+if __name__ == "__main__":
+    main()
